@@ -17,7 +17,7 @@ def display_board(board,size):
     if size == 6:
         print()
         print(f"{board[0]}|{board[1]}")
-        print('-+-+-')
+        print('-+-')
         print(f"{board[3]}|{board[4]}")
         print()
     elif size == 9:
@@ -28,6 +28,7 @@ def display_board(board,size):
         print('-+-+-')
         print(f"{board[6]}|{board[7]}|{board[8]}")
         print()
+    
     else:
         print("Grid size unable")
 
@@ -37,7 +38,16 @@ def main():
   size = int(input("Whats size of grid [Insert 6 to (2x2) or 9 to (3x3) ]: "))
   board = create_board(size)
   display_board(board,size)
-  
+
+  for i in range(size):
+    Xchoice = int(input("X's turn to choose a square (1-9): "))
+    board[Xchoice - 1] = "x" 
+    display_board(board,size)
+    
+    Ochoice = int(input("O's turn to choose a square (1-9): "))
+    board[Ochoice - 1] = "O" 
+    display_board(board,size)
+
   print("Good game. Thanks for playing!") 
 
 
