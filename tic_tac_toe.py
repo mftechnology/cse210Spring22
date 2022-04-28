@@ -32,11 +32,23 @@ def display_board(board,size):
         print("Grid size unable")
 
 
-size = int(input("Whats size of grid [Insert 6 to (2x2) or 9 to (3x3) ]: "))
-board = create_board(size)
-display_board(board,size)
+def main():
+  
+  size = int(input("Whats size of grid [Insert 6 to (2x2) or 9 to (3x3) ]: "))
+  board = create_board(size)
+  display_board(board,size)
+  
+  print("Good game. Thanks for playing!") 
+
+
+
+
+
 
 
 ##choiceX = (input("turn to choose a square (1-9): "))
 ##choice0 = (input("turn to choose a square (1-9): "))        
 
+
+if __name__ == "__main__":
+    main()
