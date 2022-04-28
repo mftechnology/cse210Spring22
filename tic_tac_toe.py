@@ -60,7 +60,7 @@ def main():
     # leave loop because all options were attended
     if i == 4:
         break
-    
+
     # option 0 value
     Ochoice = int(input("O's turn to choose a square (1-9) or (1-5): "))
     board[Ochoice - 1] = "O" 
@@ -69,7 +69,7 @@ def main():
   print("Good game. Thanks for playing!") 
 
 
-
+## Miss create the function for validating the positions
 
 
 
