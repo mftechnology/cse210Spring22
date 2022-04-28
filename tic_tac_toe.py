@@ -37,6 +37,12 @@ def main():
   # obtaint the size of the grid
   size = int(input("Whats size of grid [Insert 6 to (2x2) or 9 to (3x3) ]: "))
   
+  # tratament to loop
+  if size == 6 :
+    nloop = 2
+  else: 
+    nloop = 5
+
   # create the grid
   board = create_board(size)
   
@@ -44,14 +50,19 @@ def main():
   display_board(board,size)
  
   # make a loop between the size of the grid
-  for i in range(size):
+  for i in range(nloop):
+    print(i)
     # option for X value  
-    Xchoice = int(input("X's turn to choose a square (1-9): "))
+    Xchoice = int(input("X's turn to choose a square (1-9) or (1-5): "))
     board[Xchoice - 1] = "x" 
     display_board(board,size)
     
+    # leave loop because all options were attended
+    if i == 4:
+        break
+    
     # option 0 value
-    Ochoice = int(input("O's turn to choose a square (1-9): "))
+    Ochoice = int(input("O's turn to choose a square (1-9) or (1-5): "))
     board[Ochoice - 1] = "O" 
     display_board(board,size)
 
