@@ -1,8 +1,11 @@
+#Program development by Marcelo Duarte
+# W02 Prove: Developer - Solo Code Submission
+# BYU Worldwide 2022
 
-"""        
 
-Program development by Marcelo Duarte
-"""
+
+from ast import Break
+
 
 def create_board(number):
     # create a grid between size that were pass of parameter
@@ -31,8 +34,23 @@ def display_board(board,size):
     
     else:
         print("Grid size unable")
+        
 
+def verifywinner(board):
+    status = False
+  # verify horizontal 0 = 1 or 2 = 3
+  # verify vertical  0 = 2 or 1 = 3
+  # verify diagonal 0 = 3 or 1 = 2 
 
+    if (board[0] == board[1] or board[2] == board[3] or
+        board[0] == board[2] or board[1] == board[3] or
+        board[0] == board[3] or board[1] == board[2] ):
+        print("We have a winner!")
+        print();
+        status = True;
+  
+    return status
+          
 def main():
   # obtaint the size of the grid
   size = int(input("Whats size of grid [Insert 6 to (2x2) or 9 to (3x3) ]: "))
@@ -55,8 +73,15 @@ def main():
     # option for X value  
     Xchoice = int(input("X's turn to choose a square (1-9) or (1-5): "))
     board[Xchoice - 1] = "x" 
-    display_board(board,size)
     
+    # display grid 
+    display_board(board,size)
+
+    #verify winner
+    check = verifywinner(board)
+    if check == True:
+      break
+
     # leave loop because all options were attended
     if i == 4:
         break
@@ -64,8 +89,16 @@ def main():
     # option 0 value
     Ochoice = int(input("O's turn to choose a square (1-9) or (1-5): "))
     board[Ochoice - 1] = "O" 
-    display_board(board,size)
 
+    # display grid
+    display_board(board,size)
+    
+    #verify winner
+    check = verifywinner(board)
+    if check == True:
+      break
+
+  # Message final!
   print("Good game. Thanks for playing!") 
 
 
