@@ -36,19 +36,31 @@ def display_board(board,size):
         print("Grid size unable")
         
 
-def verifywinner(board):
+def verifywinner(board,size):
     status = False
   # verify horizontal 0 = 1 or 2 = 3
   # verify vertical  0 = 2 or 1 = 3
   # verify diagonal 0 = 3 or 1 = 2 
-
-    if (board[0] == board[1] or board[2] == board[3] or
-        board[0] == board[2] or board[1] == board[3] or
-        board[0] == board[3] or board[1] == board[2] ):
-        print("We have a winner!")
-        print();
-        status = True;
-  
+    if size == 6 :
+      if (board[0] == board[1] or board[2] == board[3] or
+          board[0] == board[2] or board[1] == board[3] or
+          board[0] == board[3] or board[1] == board[2] ):
+          print("We have a winner!")
+          print();
+          status = True;
+    elif size == 9:
+      if (board[0] == board[1] == board[2] or
+            board[3] == board[4] == board[5] or
+            board[6] == board[7] == board[8] or
+            board[0] == board[3] == board[6] or
+            board[1] == board[4] == board[7] or
+            board[2] == board[5] == board[8] or
+            board[0] == board[4] == board[8] or
+            board[2] == board[4] == board[6] ):
+          print("We have a winner!")
+          print();
+          status = True;
+    
     return status
           
 def main():
@@ -78,7 +90,7 @@ def main():
     display_board(board,size)
 
     #verify winner
-    check = verifywinner(board)
+    check = verifywinner(board,size)
     if check == True:
       break
 
@@ -94,13 +106,13 @@ def main():
     display_board(board,size)
     
     #verify winner
-    check = verifywinner(board)
+    check = verifywinner(board,size)
     if check == True:
       break
 
   # Message final!
   print("Good game. Thanks for playing!") 
-
+  print()
 
 ## Miss create the function for validating the positions
        
