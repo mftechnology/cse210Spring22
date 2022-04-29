@@ -70,13 +70,6 @@ def main():
 
 
 ## Miss create the function for validating the positions
-
-
-
-
-##choiceX = (input("turn to choose a square (1-9): "))
-##choice0 = (input("turn to choose a square (1-9): "))        
-
-
+       
 if __name__ == "__main__":
     main()
