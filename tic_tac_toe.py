@@ -3,10 +3,6 @@
 # BYU Worldwide 2022
 
 
-
-from ast import Break
-
-
 def create_board(number):
     # create a grid between size that were pass of parameter
     board = []
@@ -64,57 +60,63 @@ def verifywinner(board,size):
     return status
           
 def main():
-  # obtaint the size of the grid
-  size = int(input("Whats size of grid [Insert 6 to (2x2) or 9 to (3x3) ]: "))
+  exit = False
+  answer = "y"
   
-  # tratament to loop
-  if size == 6 :
-    nloop = 2
-  else: 
-    nloop = 5
+  while exit == False and answer == "y":
+    # obtaint the size of the grid
+    size = int(input("Whats size of grid [Insert 6 to (2x2) or 9 to (3x3) ]: "))
+  
+    # tratament to loop
+    if size == 6 :
+     nloop = 2
+    elif size == 9: 
+      nloop = 5
+    else:
+      exit = True
 
-  # create the grid
-  board = create_board(size)
+    # create the grid
+    board = create_board(size)
   
-  # display the grid
-  display_board(board,size)
- 
-  # make a loop between the size of the grid
-  for i in range(nloop):
-    print(i)
-    # option for X value  
-    Xchoice = int(input("X's turn to choose a square (1-9) or (1-5): "))
-    board[Xchoice - 1] = "x" 
-    
-    # display grid 
+    # display the grid
     display_board(board,size)
+ 
+    # make a loop between the size of the grid
+    for i in range(nloop):
+      print(i)
+      # option for X value  
+      Xchoice = int(input("X's turn to choose a square (1-9) or (1-5): "))
+      board[Xchoice - 1] = "x" 
+    
+      # display grid 
+      display_board(board,size)
 
-    #verify winner
-    check = verifywinner(board,size)
-    if check == True:
-      break
-
-    # leave loop because all options were attended
-    if i == 4:
+      #verify winner
+      check = verifywinner(board,size)
+      if check == True:
         break
 
-    # option 0 value
-    Ochoice = int(input("O's turn to choose a square (1-9) or (1-5): "))
-    board[Ochoice - 1] = "O" 
+      # leave loop because all options were attended
+      if i == 4:
+        break
 
-    # display grid
-    display_board(board,size)
+      # option 0 value
+      Ochoice = int(input("O's turn to choose a square (1-9) or (1-5): "))
+      board[Ochoice - 1] = "O" 
+
+      # display grid
+      display_board(board,size)
     
-    #verify winner
-    check = verifywinner(board,size)
-    if check == True:
-      break
+      #verify winner
+      check = verifywinner(board,size)
+      if check == True:
+        break
+
+    answer = input("Do you want, try again? [yes = y or not = n]")
 
   # Message final!
   print("Good game. Thanks for playing!") 
   print()
-
-## Miss create the function for validating the positions
        
 if __name__ == "__main__":
     main()
