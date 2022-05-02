@@ -11,3 +11,6 @@ Players take turns putting their marks in empty squares.
 The first player to get three of their marks in a row (vertically, horizontally, or diagonally) is the winner.
 If all nine squares are full and neither player has three in a row, the game ends in a draw.
 
+
+# Author
+Marcelo Santos Duarte
