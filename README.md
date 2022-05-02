@@ -1,8 +1,9 @@
 # cse210Spring22
 
-Tic-Tac-Toe is a game in which two players seek in alternate turns to complete a row, a column, or a diagonal with either three x's or three o's drawn in the spaces of a grid of nine squares
+#Tic-Tac-Toe
+Is a game in which two players seek in alternate turns to complete a row, a column, or a diagonal with either three x's or three o's drawn in the spaces of a grid of nine squares
 
-Rules
+#Rules
 Tic-Tac-Toe is played according to the following rules.
 
 The game is played on a grid that is three squares by three squares.
